@@ -2,6 +2,7 @@
 
 namespace Asylum29\TestBundle\DependencyInjection;
 
+use Asylum29\TestBundle\Classes\RecipientInterface;
 use Symfony\Component\Config\FileLocator;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\DependencyInjection\Loader\YamlFileLoader;
@@ -14,6 +15,11 @@ class TestExtension extends Extension
      */
     public function load(array $configs, ContainerBuilder $container)
     {
+        $container
+            ->registerForAutoconfiguration(RecipientInterface::class)
+            ->addTag(RecipientInterface::TAG)
+        ;
+
         $configuration = new Configuration();
         $config = $this->processConfiguration($configuration, $configs);
         $container->setParameter('test.error_prefix', $config['error_prefix']);
