@@ -1,0 +1,24 @@
+{
+    "name": "asylum29/test-bundle",
+    "type": "symfony-bundle",
+    "description": "test in symfony",
+    "version": "v1.0.15",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "asylum29",
+            "email": "ksenon3@mail.ru"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": "^7.1.3",
+        "symfony/framework-bundle": "^4.2",
+        "symfony/console": "4.*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Asylum29\\TestBundle\\": "src/"
+        }
+    }
+}
